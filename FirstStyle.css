@@ -1,0 +1,28 @@
+h1{
+    color:darkviolet;
+    font-family: Impact;
+    font-size: 38px;
+}
+span{
+    font-family: Impact;
+    text-decoration: underline;
+    font-size: 24px;
+}
+.pagelink{
+    text-decoration: none;
+    font-family: Impact;
+}
+#textlinkN{
+    color: rgb(0, 128, 6);
+}
+#textlinkP{
+    color:rgb(9, 255, 0);
+}
+.buttonlink{
+    background-color: black;
+    color:darkviolet;
+    font-family: Impact;
+    outline-style: none;
+    border: none;
+    border-radius: 50%;
+}
