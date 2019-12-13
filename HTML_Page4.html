@@ -1,0 +1,108 @@
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="./Styles/FirstStyle.css">
+    <style>
+        body{
+            background-color:rgb(194, 255, 124);
+            text-align: center;
+            font-family: 'arial narrow bold';
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        var actualAnswer;
+        var number1;
+        var number2;
+        function printQuestion()
+        {
+            actualAnswer = number1 + number2;
+            document.getElementById("theQuestion").innerHTML = "What is " + number1 + "+" + number2 + "?";
+        }
+        var score = 0
+        var antiscore = 0
+        var counter = 1 
+        function printcount()
+        {
+            document.getElementById("theCount").innerHTML = "Question:" + counter;
+        }
+        function counting()
+        {
+            if(counter>10)
+            {
+                var wholePercent = Math.floor(score/10*100);
+                document.getElementById("theQuestion").innerHTML = "Finished!";
+                document.getElementById("correct").innerHTML = " Correct Answers: " + score + "/10";
+                document.getElementById("incorrect").innerHTML="Inorrect Answers: " + antiscore + "/10";
+                document.getElementById("percent").innerHTML= "Percent Correct: " + wholePercent + "%";
+            }
+            else
+            {
+                runGame();
+            }
+        }
+        function checkAnswer()
+        { 
+            var answer = document.getElementById("txtAnswer").value;
+            if(answer==actualAnswer)
+            {
+                ++score;
+                ++counter;
+                counting();
+            }
+            else
+            {
+                ++antiscore;
+                ++counter;
+                counting();
+            }
+        }
+        function runGame()
+        {
+            for(var i = 0; i < 5; i++)
+            {
+                number1 = Math.floor(Math.random() * 10);
+                number2 = Math.floor(Math.random() * 10);
+            }
+            printQuestion();
+            printcount();
+        }
+    </script>
+    </head>
+    <body onload="runGame();">
+        <h1>Number Game!</h1>
+        <div id="theCount"></div>
+        <br>
+        <div id="theQuestion" ></div>
+        <br>
+            <table align="center">
+                <tr>
+                    <td>Your answer:</td>
+                    <td><input type="text" id="txtAnswer"  style="text-align: center;"></td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" onClick="checkAnswer();" style="border-radius:20%;font-size: 20;"  class="buttonlink" style="text-align: center;"></td>
+                </tr>
+            </table>
+        <br>
+        <div id="correct"></div>
+        <br>
+        <div id="incorrect"></div>
+        <br>
+        <div id="percent"></div>
+        <br>
+        <br>
+    </body>
+    <p style="text-align: center;">
+    <a href="HTML_Page3.html" class="pagelink" id="textlinkP">< Previous</a>
+    <button type="pageNo" onclick="window.location.href='HTML_HomePage.html';" class="buttonlink" >1</button>
+    <button type="pageNo" onclick="window.location.href='HTML_Page2.html';" class="buttonlink" >2</button>
+    <button type="pageNo" onclick="window.location.href='HTML_Page3.html';" class="buttonlink" >3</button>
+    <button type="pageNo" onclick="window.location.href='HTML_Page4.html';" class="buttonlink" >4</button>
+    <button type="pageNo" onclick="window.location.href='Trinity_Kurr_Final_Project.html';" class="buttonlink" >5</button>
+    <a href="Trinity_Kurr_Final_Project.html" class="pagelink" id="textlinkN">Next ></a>
+    </p>
+</html>
